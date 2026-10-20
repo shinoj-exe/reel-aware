@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Take control of Reels"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="See exactly how many reels you watch. Set a daily limit and get notified when you reach it."
+            android:textSize="16sp"
+            android:textColor="#555555"
+            android:layout_marginBottom="32dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to ReelAware"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To help you manage your Reel usage, we need a few permissions."
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Accessibility Permission Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. Accessibility Service"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Required to detect when you are watching Reels."
+                android:textSize="12sp"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btnOpenSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enable Service"/>
+                
+            <TextView
+                android:id="@+id/tvAccessibilityStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status: Not Granted"
+                android:textColor="#D32F2F"
+                android:gravity="center"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <!-- Overlay Permission Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:padding="16dp"
+            android:layout_marginBottom="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2. Overlay Permission"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Required to show the usage bubble on top of Instagram."
+                android:textSize="12sp"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btnOverlayPermission"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enable Overlay"/>
+            
+             <TextView
+                android:id="@+id/tvOverlayStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status: Not Granted"
+                android:textColor="#D32F2F"
+                android:gravity="center"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <!-- Notification Permission (Android 13+) -->
+        <Button
+            android:id="@+id/btnNotificationPermission"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enable Notifications"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Settings Section (Limit & Reset) -->
+        <LinearLayout
+            android:id="@+id/settingsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+            
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#CCCCCC"
+                android:layout_marginBottom="16dp"/>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daily Limit Settings"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp"/>
+
+            <Switch
+                android:id="@+id/switchNotifMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notification-Only Mode "
+                android:layout_marginBottom="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+                
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Wiggle every X reels:"
+                    android:textSize="14sp"/>
+                
+                <EditText
+                    android:id="@+id/etBatchSize"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="5"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etLimit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="30"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btnSaveLimit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save Limit"/>
+
+            <Button
+                android:id="@+id/btnResetCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reset Count (Debug)"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#FF5555"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Entirely on-device; no data leaves the device.\nApp works with airplane mode; network permission not requested."
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:gravity="center"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

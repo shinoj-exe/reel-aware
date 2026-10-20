@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bubbleRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bubble_bg"
+    android:gravity="center"
+    android:minWidth="70dp"
+    android:minHeight="70dp"
+    android:padding="4dp">
+
+    <TextView
+        android:id="@+id/tvCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:includeFontPadding="false"/>
+
+    <TextView
+        android:id="@+id/tvLimit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/ 30"
+        android:textColor="#DDFFFFFF"
+        android:textSize="12sp"
+        android:layout_marginTop="-2dp"/>
+
+</LinearLayout>
